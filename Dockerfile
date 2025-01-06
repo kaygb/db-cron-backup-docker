@@ -15,6 +15,9 @@ ENV MYSQL_PASSWORD="password"
 ENV MYSQL_DATABASE="db_name"
 ENV BACKUP_DIR="/backup"
 
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # 将备份脚本复制到容器内
 COPY backup_script.sh .
 RUN chmod +x /app/backup_script.sh

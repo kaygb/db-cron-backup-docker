@@ -1,1 +1,1 @@
-10 0 * * * /app/backup_script.sh >> /var/log/cron.log 2>&1
+* * * * * /app/backup_script.sh >> >> /proc/1/fd/1 2>> /proc/1/fd/2
